@@ -11,4 +11,8 @@ export class AppService {
   async saveFeedback(feedback: Feedback) {
     await knex('feedback').insert(feedback);
   }
+
+  async returnFeedback() {
+    return knex.select().from('feedback');
+  }
 }

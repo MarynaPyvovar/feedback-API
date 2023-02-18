@@ -15,4 +15,9 @@ export class AppController {
   async saveFeedback(@Body() body: Feedback) {
     await this.appService.saveFeedback(body);
   }
+
+  @Get('/feedback')
+  async returnFeedback(): Promise<Feedback[]> {
+    return this.appService.returnFeedback();
+  }
 }
